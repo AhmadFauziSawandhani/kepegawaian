@@ -13,10 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('layouts/app');
-});
+// Route::get('/', function () {
+//     return view('layouts/app');
+// });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
+
+Route::get('/profile/{id}', 'ProfileController@edit')->name('profile.edit');
+Route::patch('/profile/{id}', 'ProfileController@update')->name('profile.update');

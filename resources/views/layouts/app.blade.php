@@ -16,10 +16,13 @@
 
   <!-- Custom fonts for this template-->
   <link href="{{ asset('assets/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+  <link href="{{ asset('assets/css/font.css')}}" rel="stylesheet">
 
   <!-- Custom styles for this template-->
   <link href="{{ asset('assets/css/sb-admin-2.min.css') }}" rel="stylesheet">
+
+  <!-- Bootstrap Css -->
+  <link href="{{ asset('css/bootstrap.min.css')}}" rel="stylesheet">
 
 </head>
 
@@ -62,8 +65,7 @@
             <!-- Begin Page Content -->
             <div class="container-fluid">
 
-            <!-- Page Heading -->
-            <h1 class="h3 mb-4 text-gray-800">Blank Page</h1>
+            @yield('content')
 
             </div>
             <!-- /.container-fluid -->
@@ -72,13 +74,7 @@
         <!-- End of Main Content -->
 
         <!-- Footer -->
-        <footer class="sticky-footer bg-white">
-            <div class="container my-auto">
-            <div class="copyright text-center my-auto">
-                <span>Copyright &copy; Your Website 2019</span>
-            </div>
-            </div>
-        </footer>
+        @include('layouts.footer')
         <!-- End of Footer -->
 
         </div>
@@ -125,6 +121,9 @@
     <!-- Custom scripts for all pages-->
     <script src="{{ asset('assets/js/sb-admin-2.min.js') }}"></script>
 
+    <!-- Bootstrap JS-->
+    <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('js/jquery-3.5.1.slim.min.js') }}"></script>
     </body>
 @endguest
 </html>
