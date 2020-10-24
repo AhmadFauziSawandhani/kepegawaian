@@ -14,8 +14,8 @@ class BrandController extends Controller
      */
     public function index()
     {
-        $brand = Brand::all();
-        return view('layouts.sidebar',['brand' => $brand]);
+        // $brand = Brand::all();
+        // return view('layouts.sidebar',['brand' => $brand]);
     }
 
     /**
@@ -56,9 +56,10 @@ class BrandController extends Controller
      * @param  \App\Brand  $brand
      * @return \Illuminate\Http\Response
      */
-    public function edit(Brand $brand)
+    public function edit($id)
     {
-        //
+        $setting = Brand::find($id);
+        return view('brand/setting', compact('setting'));
     }
 
     /**
@@ -68,9 +69,15 @@ class BrandController extends Controller
      * @param  \App\Brand  $brand
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Brand $brand)
+    public function update(Request $request,$id)
     {
-        //
+        $brand = Brand::find($id);
+        $brand->name_brand = $request->name_brand;
+        // dd($brand);
+        $brand->save();
+        return redirect()->route('home')->with([
+            'success' => 'Data telah Berhasil Diubah'
+        ]);
     }
 
     /**

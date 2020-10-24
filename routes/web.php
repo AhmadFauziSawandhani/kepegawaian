@@ -21,5 +21,11 @@ Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
 
+// Profile
 Route::get('/profile/{id}', 'ProfileController@edit')->name('profile.edit');
 Route::patch('/profile/{id}', 'ProfileController@update')->name('profile.update');
+
+// Setting
+Route::get('/setting/{id}', 'BrandController@edit')->name('setting.edit');
+Route::patch('/setting/{id}', 'BrandController@update')->name('setting.update');
+

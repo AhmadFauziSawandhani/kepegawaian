@@ -2,8 +2,11 @@
 
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ url('/') }}">
+        {{-- <div class="sidebar-brand-icon rotate-n-15">
+            <i class="fas fa-laugh-wink"></i>
+          </div> --}}
         <div class="sidebar-brand-text mx-3">
-            Aplikasi Kepegawaian
+            {{$brand->name_brand}}
         </div>
     </a>
 
@@ -22,9 +25,9 @@
 
     <!-- Nav Item - Tables -->
     <li class="nav-item">
-        <a class="nav-link" href="tables.html">
+        <a class="nav-link" href="{{ route('')}}">
         <i class="fas fa-fw fa-table"></i>
-        <span>Tables</span></a>
+        <span>Data Pegawai</span></a>
     </li>
 
     <!-- Divider -->
