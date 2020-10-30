@@ -29,3 +29,7 @@ Route::patch('/profile/{id}', 'ProfileController@update')->name('profile.update'
 Route::get('/setting/{id}', 'BrandController@edit')->name('setting.edit');
 Route::patch('/setting/{id}', 'BrandController@update')->name('setting.update');
 
+// Datapegawai
+Route::get('/datapegawai', function(){
+    return view('datapegawai/index');
+});

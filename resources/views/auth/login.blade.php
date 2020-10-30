@@ -1,8 +1,11 @@
 @extends('layouts.app')
 
 @section('auth')
-<div class="container">
-  
+<div class="container" style="
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);">
     <!-- Outer Row -->
     <div class="row justify-content-center">
 
@@ -12,7 +15,11 @@
           <div class="card-body p-0">
             <!-- Nested Row within Card Body -->
             <div class="row">
-              <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+              <div class="col-lg-6 d-none d-lg-block" style="
+              background-image: url('/assets/img/brand/{{$brand->image_login}}') !important;
+              background-position: center;
+              background-size: cover;">
+              </div>
               <div class="col-lg-6">
                 <div class="p-5">
                   <div class="text-center">
@@ -66,6 +73,5 @@
       </div>
 
     </div>
-
-  </div>
+</div>
 @endsection

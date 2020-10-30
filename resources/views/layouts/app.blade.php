@@ -24,6 +24,11 @@
   <!-- Bootstrap Css -->
   <link href="{{ asset('css/bootstrap.min.css')}}" rel="stylesheet">
 
+  <!-- Custom Css -->
+  <link href="{{ asset('assets/css/custom.css')}}" rel="stylesheet">
+
+    <!-- Custom styles for this page -->
+    <link href="{{ asset('assets/vendor/datatables/dataTables.bootstrap4.min.css') }}" rel="stylesheet">
 </head>
 
 @guest
@@ -93,16 +98,16 @@
         <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Notifikasi</h5>
             <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">×</span>
             </button>
             </div>
-            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+            <div class="modal-body">Apakah anda yakin akan keluar dari aplikasi?</div>
             <div class="modal-footer">
-            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Tidak</button>
             <a class="btn btn-primary" href="{{ route('logout') }}" onclick="event.preventDefault();
-            document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
+            document.getElementById('logout-form').submit();">Ya</a>
             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                 @csrf
             </form>
@@ -110,7 +115,6 @@
         </div>
         </div>
     </div>
-
     <!-- Bootstrap core JavaScript-->
     <script src="{{ asset('assets/vendor/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
@@ -123,7 +127,10 @@
 
     <!-- Bootstrap JS-->
     <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ asset('js/jquery-3.5.1.slim.min.js') }}"></script>
+    {{-- <script src="{{ asset('js/jquery-3.5.1.slim.min.js') }}"></script> --}}
+
+    @yield('js')
+        
     </body>
 @endguest
 </html>

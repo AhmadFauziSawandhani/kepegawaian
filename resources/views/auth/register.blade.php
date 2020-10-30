@@ -1,13 +1,21 @@
 @extends('layouts.app')
 
 @section('auth')
-<div class="container">
+<div class="container" style="
+position: absolute;
+left: 50%;
+top: 50%;
+transform: translate(-50%, -50%);">
 
     <div class="card o-hidden border-0 shadow-lg my-5">
       <div class="card-body p-0">
         <!-- Nested Row within Card Body -->
         <div class="row">
-          <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
+          <div class="col-lg-5 d-none d-lg-block" style="
+          background-image: url('/assets/img/{{$brand->image_register}}'); 
+          background-position: center;
+          background-size: cover;">
+          </div>
           <div class="col-lg-7">
             <div class="p-5">
               <div class="text-center">
